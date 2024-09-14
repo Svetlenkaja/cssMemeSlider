@@ -18,7 +18,8 @@ h2 {
     max-width: 1024px;
     margin: 0 auto;
     padding: 2%;
-    background:#f5e6e1;
+    background: #f5f5f5;
+    /* background:#f5e6e1; */
 }
 
 .slider {
@@ -29,24 +30,46 @@ h2 {
     gap: 40px;
 }
 
-.slides img {
+.overflow {
     width: 100%;
-    overflow: hidden;
+	overflow: hidden;
+}
+
+.slides {
+    width: 400%;
+    font-size: 0;
+}
+
+.slides img {
+    width: 25%;
 }
 
 .bar {
     display: flex;
 }
 
-.titles {
+.bar .overflow {
     flex: 3 0 0;
+}
+
+.titles {
     padding: 10px;
+    /* height: 2rem; */
+    display: flex;
+    width: 400%;
+}
+
+.titles .title {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    width: 25%;
 }
 
 .dots {
     flex: 1 0 0;
     display: flex;
     justify-content: end;
+    align-items: center;
     padding: 10px;
     gap: 15px;
 }
@@ -56,9 +79,9 @@ h2 {
     border-radius: 50%;
 	width: 1rem;
 	height: 1rem;
-    background: #d0293c;
-	/* background: #7d8bd9; */
-    border: 2px solid #d0293c;
+    /* background: #d0293c; */
+	background: #7d8bd9;
+    border: 2px solid #7d8bd9;
     cursor: pointer;
 }
 
@@ -72,7 +95,7 @@ h2 {
 #dot3:checked ~ .bar .dots label:nth-child(3),
 #dot4:checked ~ .bar .dots label:nth-child(4) {
 	background:white;
-	border: 2px solid #d0293c;
+	border: 2px solid #7d8bd9;
 }
 
 #dot1:checked:hover ~ .bar .dots label:nth-child(1),
@@ -80,4 +103,44 @@ h2 {
 #dot3:checked:hover ~ .bar .dots label:nth-child(3),
 #dot4:checked:hover ~ .bar .dots label:nth-child(4) {
 	border: 2px solid #002c73;
+}
+
+#dot1:checked ~ .overflow .slides {
+	margin-left: 0;
+    transition: 0.5s;
+}
+
+#dot2:checked ~ .overflow .slides {
+	margin-left: -100%;
+    transition: 0.5s;
+}
+
+#dot3:checked ~ .overflow .slides {
+	margin-left: -200%;
+    transition: 0.5s;
+}
+
+#dot4:checked ~ .overflow .slides {
+	margin-left: -300%;
+    transition: 0.5s;
+}
+
+#dot1:checked ~ .bar .overflow .titles {
+    margin-left: 0;
+    transition: 0.5s;
+}
+
+#dot2:checked ~ .bar .overflow .titles {
+    margin-left: -100%;
+    transition: 0.5s;
+}
+
+#dot3:checked ~ .bar .overflow .titles {
+    margin-left: -200%;
+    transition: 0.5s;
+}
+
+#dot4:checked ~ .bar .overflow .titles {
+    margin-left: -300%;
+    transition: 0.5s;
 }
